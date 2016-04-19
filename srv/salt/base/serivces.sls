@@ -6,6 +6,6 @@
 {% endfor %}
 
 packages install:
-{% for item in pillar[custom][install_services] %}
   pkg.installed:
-{% endfor %}
+    - pkgs:
+       {{ pillar['custom']['install_services'] }}
