@@ -1,0 +1,7 @@
+#disable services
+disable_services:
+  - acpid
+  - netfs
+  - ip6tables
+  - postfix
+  - udev-post
