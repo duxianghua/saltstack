@@ -5,3 +5,11 @@ disable_services:
   - ip6tables
   - postfix
   - udev-post
+install_services:
+  - sysstat
+  - man
+  - wget
+  - screen
+  - gcc-c++
+time_zone: Asia/Kuala_Lumpur
+ntp_server: 0.centos.pool.ntp.org
