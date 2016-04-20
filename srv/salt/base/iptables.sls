@@ -1,4 +1,4 @@
-iptables_managed:
+iptables:
   file.managed:
     - source: salt://templates/iptables/iptables.j2
     - name: /etc/sysconfig/iptables
@@ -10,4 +10,4 @@ iptables_managed:
     - name: iptables
     - restart: True
     - watch:
-      - /etc/sysconfig/iptables
+      - file: /etc/sysconfig/iptables
