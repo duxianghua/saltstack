@@ -1,3 +1,3 @@
 include:
-  - httpd_config
-  - install
+  - apache.httpd_config
+  - apache.install
