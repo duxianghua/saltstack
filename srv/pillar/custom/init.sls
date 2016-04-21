@@ -28,7 +28,7 @@ def run():
     	host_configure = open(host_configure_path).read()
     #merge configure
     configure = globe_configure+group_configure+host_configure
-    config = yaml.load(configure)
+    temp_config = yaml.load(configure)
     #write logs
     if os.path.exists(log_path) != True:
         os.makedirs(log_path)
@@ -36,4 +36,5 @@ def run():
         log_path = log_path+'/'
     f = file(log_path+host_id+'.log','w')
     f.write(configure)
+    config['custom'] = temp_config
     return config
