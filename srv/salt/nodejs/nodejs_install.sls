@@ -2,9 +2,7 @@ nodejs-install:
   cmd.run:
     - name: curl -sL https://rpm.nodesource.com/setup_5.x | bash -
   pkg.installed:
-    - pkgs:
-      - nodejs
-      - name: nodejs
+    - name: nodejs
   npm.installed:
     - pkgs:
       - inherits
@@ -14,5 +12,4 @@ nodejs-install:
       - iconv-lite
       - redis
       - ain2
-      - unix-dgram
-      - underscore
+      #- unix-dgram
