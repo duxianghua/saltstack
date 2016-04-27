@@ -1,7 +1,7 @@
 include:
-  - iptables
-  - ntpd
-  - services
-  - sshd
-  - sys
-  - yum
+  - base.iptables
+  - base.ntpd
+  - base.services
+  - base.sshd
+  - base.sys
+  - base.yum
