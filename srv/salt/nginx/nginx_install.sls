@@ -6,11 +6,6 @@ nginx_install:
     - name: /etc/nginx/nginx.conf
     - require:
       - pkg: nginx
-  file.managed:
-    - source: salt://templates/nginx/default.conf
-    - name: /etc/nginx/conf.d/default.conf
-    - watch:
-      - file: /etc/nginx/conf.d/default.conf
   service.runing:
     - name: nginx
     - enable: True
@@ -18,4 +13,16 @@ nginx_install:
     - watch:
       - pkg: nginx
       - file: /etc/nginx/nginx.conf
+
+nginx_configure:
+  file.managed:
+    - source: salt://templates/nginx/default.conf
+    - name: /etc/nginx/conf.d/default.conf
+    - watch:
+      - file: /etc/nginx/nginx.conf
+    service.runing:
+    - name: nginx
+    - enable: True
+    - restart: True
+    - watch:
       - file: /etc/nginx/conf.d/default.conf
