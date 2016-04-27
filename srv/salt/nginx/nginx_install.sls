@@ -4,23 +4,22 @@ nginx_install:
   file.managed:
     - source: salt://templates/nginx/nginx.conf
     - name: /etc/nginx/nginx.conf
+    - template: jinja
     - require:
       - pkg: nginx
-  service.runing:
+  service.running:
     - name: nginx
     - enable: True
     - restart: True
     - watch:
-      - pkg: nginx
       - file: /etc/nginx/nginx.conf
-
 nginx_configure:
   file.managed:
     - source: salt://templates/nginx/default.conf
     - name: /etc/nginx/conf.d/default.conf
-    - watch:
-      - file: /etc/nginx/nginx.conf
-    service.runing:
+    - require:
+      - pkg: nginx
+  service.running:
     - name: nginx
     - enable: True
     - restart: True
