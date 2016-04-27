@@ -13,3 +13,4 @@ install_services:
   - gcc-c++
 time_zone: Asia/Kuala_Lumpur
 ntp_server: 0.centos.pool.ntp.org
+exit
