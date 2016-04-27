@@ -6,7 +6,7 @@ iptables:
     - user: root
     - group: root
     - template: jinja
-  services.running:
+  service.running:
     - name: iptables
     - restart: True
     - watch:
